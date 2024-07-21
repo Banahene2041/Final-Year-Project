@@ -1,0 +1,393 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Koh Santepheap", serif;
+}
+.login-section{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    overflow-x: hidden;
+}
+.doctor-img-container{
+    width: 60%;
+    height: 100%;
+}
+.doctor-img-container img{
+    width: 100%;
+    height: 100%;
+}
+.login-container{
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(to bottom, #3EDD9A,#D9EEE5,#2CBA7E);
+}
+.logo{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+.logo img{
+    width: 9rem;
+    height: 2.5rem;
+    margin-right: 5rem;
+    border-radius: .5rem;
+}
+.main-form{
+    margin-top: 3rem;
+}
+.title p{
+    margin-left: 5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+    letter-spacing: .4px;
+}
+.main-form form{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+/* .main-form form img{
+    width: 20px;
+    cursor: pointer;
+} */
+.main-form .email, .main-form .password{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-top: 1rem;
+}
+.main-form form label{
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    width: 45%;
+}
+.main-form form input{
+    width: 45%;
+    border-radius: .3rem;
+    border: 2px solid rgb(88, 87, 87);
+    padding: .4rem 2rem .4rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    background: transparent;
+}
+.main-form form input::placeholder{
+    font-size: .7rem;
+}
+.main-form .mail{
+    position: absolute;
+    top: 3.15rem;
+    font-size: 1.1rem;
+    -webkit-top: 3.15rem;
+    right: 11rem;
+    cursor: pointer;
+}
+.eye-btn{
+    cursor: pointer;
+    position: absolute;
+    top: 8rem;
+    -webkit-top: 8rem;
+    right: 11rem;
+    font-size: 1.2rem;
+}
+.main-form .text{
+    display: flex;
+    font-size: .8rem;
+    gap: 2.5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: .7rem;
+    font-weight: 600;
+}
+.btn-submit{
+    margin-top: .5rem;
+    width: 45%;
+    padding: .5rem 0rem;
+    border-radius: .5rem;
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+    transition: .3s;
+}
+.btn-submit:hover{
+    background: #538e41;
+}
+
+@media (max-width:700px) {
+    .login-section{
+        flex-direction: column;
+    }
+    .doctor-img-container{
+        width: 100%;
+        height: 100%;
+    }
+    .login-container{
+        width: 100%;
+        height: 100%;
+    }
+    .main-form form label{
+        width: 75%;
+    }
+    .main-form form input{
+       width: 75%; 
+    }
+    .main-form{
+        margin-top: 1rem;
+    }
+    .main-form form{
+        margin-top: 0.4rem;
+    }
+    .eye-btn{
+        right: 3.5rem;
+        top: 8.1rem;
+    }
+    .main-form .mail{
+        top: 3.1rem;
+        right: 3.5rem;
+    }
+    .logo{
+        display: none;
+    }
+    .title p{
+        margin-left: 3rem;
+    }
+}
+
+/* signup section */
+.signup-section{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    overflow-x: hidden;
+}
+.signledoctor-img-container{
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(to bottom, #3EDD9A,#D9EEE5,#2CBA7E);
+}
+.signup-container{
+    width: 60%;
+    height: 100%;
+    background: url("./assets/single_doctor.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.welcome-container{
+    width: 60%;
+    margin-top: 3rem;
+    height: 30vh;
+    background: #fff;
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: .4px .4px 1px rgba(0,0,0,0.1);
+}
+.welcome{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    text-shadow: 2.5px 2.5px 3px rgba(0,0,0,0.3);
+}
+.welcome-container img{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 0rem .2rem;
+}
+.welcome-container p{
+    margin-top: 1rem;
+    /* width: 55%; */
+    opacity: 0.7;
+}
+.welcome-container h4{
+    margin-top: .4rem;
+    color: #1c9164;
+    font-size: 1.1rem;
+}
+.logo-pharm{
+    justify-content: flex-start;
+    margin-left: 4rem;
+}
+.signup{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-left: 8rem;
+    margin-top: 1.5rem;
+}
+.signup .signup-title h3{
+    font-size: 1.3rem;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+}
+.signup label{
+    font-weight: 600;
+    font-size: .85rem;
+    margin-bottom: .3rem;
+}
+.signup .signup-title p{
+    font-size: .85rem;
+    font-weight: 600;
+    margin-top: .8rem;
+}
+.login-here{
+    color: #2E8ADE;
+}
+.signup .name{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 1rem 0rem;
+}
+.signup .name div{
+    display: flex;
+    gap: 1rem;
+}
+.signup .birth-date, .gender, .email-address, .password, .confirm-password{
+    display: flex;
+    flex-direction: column;
+}
+
+.signup .birth-date input,.signup .name input{
+    width: 30%;
+}
+.signup .birth-date input{
+    width: 35%;
+}
+.signup input{
+    border-radius: .3rem;
+    border: 2px solid rgb(88, 87, 87);
+    padding: .3rem .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    background: transparent;
+}
+.signup .gender{
+    margin: .5rem 0rem;
+}
+.signup .gender select{
+    background-color: transparent;
+    width: 20%;
+    padding: .3rem;
+    border-radius: .2rem;
+    border: 1px solid rgb(88, 87, 87);
+}
+.signup .email-address input, .signup .password input, .signup .confirm-password input{
+    width: 65%;
+}
+.signup .password{
+    margin: .5rem 0rem;
+    position: relative;
+}
+.signup .checkbox{
+    display: flex;
+    gap: 2rem;
+    margin: .5rem 0rem;
+}
+.checkbox p{
+    font-size: .8rem;
+    width: 50%;
+    opacity: .7;
+}
+.signup .confirm-password, .signup .email-address{
+    position: relative;
+}
+.signup .lock,.signup .envelope,.signup .eye-close{
+    position: absolute;
+    font-size: 1.1rem;
+    cursor: pointer;
+    top: 2rem;
+    right: 11rem;
+    -webkit-top: 2rem;
+    -webkit-right:11rem;
+    transition: .3s;
+}
+
+@media (max-width:750px) {
+    .signup-section{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .signledoctor-img-container{
+        width: 100%;
+        height: 62vh;
+    }
+    .signup-container{
+        width: 100%;
+        height: 38vh;
+    }
+    .welcome-container{
+        margin-top: .5rem;
+        height: 18vh;
+        width: 65%;
+    }
+    .welcome{
+        font-size: .88rem;
+    }
+    .welcome-container p{
+        font-size: .7rem;
+    }
+    .welcome-container h4{
+        font-size: .9rem;
+    }
+    .signup{
+        margin-top: .3rem;
+        margin-left: 3rem;
+    }
+    .signup .signup-title h3{
+        font-size: 1.1rem;
+    }
+    .signup .signup-title p{
+        margin-top: 0.2rem;
+    }
+    .signup .name{
+        margin: .3rem;
+    }
+    .signup input{
+        padding: .1rem .5rem;
+    }
+    .checkbox p{
+        width: 75%;
+    }
+    .signup .gender{
+        margin: .3rem 0rem;
+    }
+    .signup .password{
+        margin: .3rem 0rem;
+    }
+    .signup .lock,.signup .envelope,.signup .eye-close{
+        top: 1.8rem;
+        -webkit-top: 1.8rem;
+        right: 7.2rem;
+        -webkit-right: 7.5rem;
+    }
+
+}
+
+@media (max-width:900px) {
+    .signup .lock,.signup .envelope,.signup .eye-close{
+        top: 1.8rem;
+        -webkit-top: 1.8rem;
+        right: 7.8rem;
+        -webkit-right: 7.5rem;
+    }  
+}

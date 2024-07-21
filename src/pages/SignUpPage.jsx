@@ -39,7 +39,7 @@ const SignInPage = () => {
                   id='name'
                   required
                   name='firstname'
-                  placeholder='First Name'
+                  placeholder='FirstName'
                 />
               </div>
             </div>

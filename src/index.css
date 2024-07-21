@@ -335,6 +335,9 @@
         display: flex;
         flex-direction: column-reverse;
     }
+    .signup .name input::placeholder{
+        font-size: .8rem;
+    }
     .signledoctor-img-container{
         width: 100%;
         height: 70vh;

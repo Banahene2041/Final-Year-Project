@@ -275,6 +275,7 @@
 }
 .signup .birth-date input{
     width: 35%;
+    color: black;
 }
 .signup input{
     border-radius: .3rem;

@@ -4,6 +4,7 @@ import logoPharmImg from "../assets/logo_pharm.jpg"
 import { FaEnvelope } from "react-icons/fa6"
 import { IoMdEyeOff } from "react-icons/io"
 import { IoEyeSharp } from "react-icons/io5"
+import { Link } from "react-router-dom"
 
 const LoginPage = () => {
   const [showPassword,setShowPassword] = React.useState(false)
@@ -31,7 +32,7 @@ const LoginPage = () => {
                 required
               />
             </div>
-            <FaEnvelope className='mail'/>
+            <FaEnvelope className='mail' />
             <div className='password'>
               <label htmlFor='password'>Enter your Password</label>
               <input
@@ -42,18 +43,20 @@ const LoginPage = () => {
                 required
               />
             </div>
-            <p className='eye-btn' type='button' onClick={()=>setShowPassword(!showPassword)}>
-              {showPassword ? (
-                <IoEyeSharp />
-              ) : (
-                <IoMdEyeOff />
-              )}
+            <p
+              className='eye-btn'
+              type='button'
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <IoEyeSharp /> : <IoMdEyeOff />}
             </p>
             <div className='text'>
-              <p>create an Account</p>
+              <Link className='create-account' to={'/signup'}>create an Account</Link>
               <p>Forgot Password?</p>
             </div>
-            <button className='btn-submit' type='submit'>Login</button>
+            <button className='btn-submit' type='submit'>
+              Login
+            </button>
           </form>
         </div>
       </div>

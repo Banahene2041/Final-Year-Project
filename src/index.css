@@ -295,6 +295,7 @@
     height: 10%;
     border-radius: .2rem;
     border: 1px solid rgb(88, 87, 87);
+    outline: none;
 }
 .signup .email-address input, .signup .password input, .signup .confirm-password input{
     width: 65%;

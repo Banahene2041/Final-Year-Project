@@ -330,6 +330,10 @@
     transition: .3s;
 }
 
+#checkbox{
+    accent-color: black;
+}
+
 @media (max-width:750px) {
     .signup-section{
         min-height: 100vh;

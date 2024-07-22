@@ -106,7 +106,7 @@ const SignInPage = () => {
               <IoMdEyeOff className='eye-close' />
             </div>
             <div className='checkbox'>
-              <input type='checkbox' required />
+              <input type='checkbox' id='checkbox' required />
               <p>
                 By Signing Up you agree you are above 18 and accept the Term and
                 Condition

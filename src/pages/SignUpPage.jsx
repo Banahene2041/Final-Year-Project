@@ -128,9 +128,9 @@ const SignInPage = () => {
               <p>By Signing Up you agree to the Terms and Conditions</p>
             </div>
             <div className='sigup-btn-container'>
-              <button type='submit' className='btn-submit'>
+              <Link to={'/login'} type='submit' className='btn-submit btn-signup'>
                 Sign Up
-              </button>
+              </Link>
             </div>
           </form>
         </div>

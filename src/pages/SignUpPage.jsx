@@ -9,6 +9,19 @@ import { IoLockClosed } from "react-icons/io5"
 const SignInPage = () => {
   return (
     <section className='signup-section'>
+      <div className='hidden-container'>
+        <div className='signup-logo-section'>
+          <div className='signup-logo'>
+            <img src={logoPharmImg} alt='' />
+          </div>
+          <h3>
+            welcome to giv
+            <img src={logo} alt='' />
+            pharm
+          </h3>
+          <p>Let's help you get your prescription drugs with ease</p>
+        </div>
+      </div>
       <div className='signledoctor-img-container'>
         <div className='logo logo-pharm'>
           <img src={logoPharmImg} alt='logo' />
@@ -81,15 +94,15 @@ const SignInPage = () => {
               </select>
             </div>
             <div className='email-address'>
-              <label htmlFor='email'>Enter your Email Address</label>
-              <input type='text' placeholder='Email' id='email' required />
+              <label htmlFor='email'>Email</label>
+              <input type='text' placeholder='Enter your Email' id='email' required />
               <FaEnvelope className='envelope' />
             </div>
             <div className='password'>
-              <label htmlFor='password'>Enter your Password</label>
+              <label htmlFor='password'>Password</label>
               <input
                 type='password'
-                placeholder='Password'
+                placeholder='Enter your password'
                 id='password'
                 required
               />
@@ -126,9 +139,7 @@ const SignInPage = () => {
             pharm
           </h3>
           <p>
-            Get your medication here,easy and <br /> convenient anywhere you
-            are. <br />
-            Try our service
+            Let's help you get your prescription drugs with ease
           </p>
           <h4>Your Health is our Priority</h4>
         </div>

@@ -192,6 +192,8 @@
     }
     .login-section-logo{
         display: block;
+        margin-top: 3rem;
+        margin-left: 1rem;
     }
     .main-form .mail{
         top: 3.8rem;

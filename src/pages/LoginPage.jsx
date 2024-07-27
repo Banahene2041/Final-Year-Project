@@ -1,15 +1,20 @@
 import React from 'react'
 import doctorImg from "../assets/doctors.jpg"
 import logoPharmImg from "../assets/logo_pharm.jpg"
+import logo from "../assets/logo.jpg"
 import { FaEnvelope } from "react-icons/fa6"
 import { IoMdEyeOff } from "react-icons/io"
 import { IoEyeSharp } from "react-icons/io5"
 import { Link } from "react-router-dom"
+import Logo from '../components/Logo'
 
 const LoginPage = () => {
   const [showPassword,setShowPassword] = React.useState(false)
   return (
     <section className='login-section'>
+      <div className='login-section-logo'>
+        <Logo />
+      </div>
       <div className='doctor-img-container'>
         <img src={doctorImg} alt='doctors' />
       </div>
@@ -19,27 +24,29 @@ const LoginPage = () => {
         </div>
         <div className='main-form'>
           <div className='title'>
-            <p>Login</p>
+            <p>
+              Login to GIV <img src={logo} alt='' /> PHARM
+            </p>
           </div>
           <form>
             <div className='email'>
-              <label htmlFor='email'>Enter your Email Address</label>
+              <label htmlFor='email'>Email</label>
               <input
                 type='text'
                 name='email'
                 id='email'
-                placeholder='Email'
+                placeholder='Enter your Email'
                 required
               />
             </div>
             <FaEnvelope className='mail' />
             <div className='password'>
-              <label htmlFor='password'>Enter your Password</label>
+              <label htmlFor='password'>Password</label>
               <input
                 type='password'
                 name='password'
                 id='password'
-                placeholder='Password'
+                placeholder='Enter your Password'
                 required
               />
             </div>
@@ -51,8 +58,10 @@ const LoginPage = () => {
               {showPassword ? <IoEyeSharp /> : <IoMdEyeOff />}
             </p>
             <div className='text'>
-              <Link className='create-account' to={'/signup'}>create an Account</Link>
-              <p>Forgot Password?</p>
+              <Link className='create-account' to={"/signup"}>
+                Create an Account
+              </Link>
+              <Link className='btn-forget'>Forgot Password?</Link>
             </div>
             <button className='btn-submit' type='submit'>
               Login

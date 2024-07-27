@@ -2,9 +2,9 @@ import React from 'react'
 import logo from "../assets/logo.jpg"
 import logoPharmImg from "../assets/logo_pharm.jpg"
 import {Link} from "react-router-dom"
-import { FaEnvelope } from "react-icons/fa6"
-import { IoMdEyeOff } from "react-icons/io"
-import { IoLockClosed } from "react-icons/io5"
+// import { FaEnvelope } from "react-icons/fa6"
+// import { IoMdEyeOff } from "react-icons/io"
+// import { IoLockClosed } from "react-icons/io5"
 
 const SignInPage = () => {
   return (
@@ -95,8 +95,13 @@ const SignInPage = () => {
             </div>
             <div className='email-address'>
               <label htmlFor='email'>Email</label>
-              <input type='text' placeholder='Enter your Email' id='email' required />
-              <FaEnvelope className='envelope' />
+              <input
+                type='text'
+                placeholder='Enter your Email'
+                id='email'
+                required
+              />
+              {/* <FaEnvelope className='envelope' /> */}
             </div>
             <div className='password'>
               <label htmlFor='password'>Password</label>
@@ -106,7 +111,7 @@ const SignInPage = () => {
                 id='password'
                 required
               />
-              <IoLockClosed className='lock' />
+              {/* <IoLockClosed className='lock' /> */}
             </div>
             <div className='confirm-password'>
               <label htmlFor='confirm-password'>Confrim your Password</label>
@@ -116,18 +121,17 @@ const SignInPage = () => {
                 id='confirm-password'
                 placeholder='Confirm Password'
               />
-              <IoMdEyeOff className='eye-close' />
+              {/* <IoMdEyeOff className='eye-close' /> */}
             </div>
             <div className='checkbox'>
               <input type='checkbox' id='checkbox' required />
-              <p>
-                By Signing Up you agree you are above 18 and accept the Term and
-                Condition
-              </p>
+              <p>By Signing Up you agree to the Terms and Conditions</p>
             </div>
-            <button type='submit' className='btn-submit'>
-              Sign Up
-            </button>
+            <div className='sigup-btn-container'>
+              <button type='submit' className='btn-submit'>
+                Sign Up
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -138,9 +142,7 @@ const SignInPage = () => {
             <img src={logo} alt='' />
             pharm
           </h3>
-          <p>
-            Let's help you get your prescription drugs with ease
-          </p>
+          <p>Let's help you get your prescription drugs with ease</p>
           <h4>Your Health is our Priority</h4>
         </div>
       </div>

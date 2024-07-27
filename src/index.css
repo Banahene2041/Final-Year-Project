@@ -21,7 +21,7 @@
 .login-container{
     width: 40%;
     height: 100%;
-    background: linear-gradient(to bottom, #3EDD9A,#D9EEE5,#2CBA7E);
+    background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
 }
 .logo{
     width: 100%;
@@ -43,8 +43,12 @@
     margin-left: 5rem;
     font-size: 1.3rem;
     font-weight: 600;
-    text-shadow: 1px 2px 2px rgba(0,0,0,0.2);
     letter-spacing: .4px;
+    text-align: center;
+}
+.title p img {
+    width: 1rem;
+    height: 1.2rem;
 }
 .main-form form{
     margin-top: 2rem;
@@ -68,16 +72,16 @@
     margin-top: 1rem;
 }
 .main-form form label{
-    font-size: .8rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: .5rem;
-    width: 45%;
+    margin-bottom: .7rem;
+    width: 50%;
 }
 .main-form form input{
-    width: 45%;
-    border-radius: .3rem;
-    border: 2px solid rgb(88, 87, 87);
-    padding: .4rem 2rem .4rem 1rem;
+    width: 50%;
+    border-radius: .6rem;
+    border: 1.5px solid rgb(88, 87, 87);
+    padding: .7rem 2rem .4rem 1rem;
     font-size: 1rem;
     font-weight: 500;
     outline: none;
@@ -88,43 +92,46 @@
 }
 .main-form .mail{
     position: absolute;
-    top: 3.15rem;
+    top: 3.8rem;
     font-size: 1.1rem;
-    -webkit-top: 3.15rem;
-    right: 11rem;
+    -webkit-top: 3.8rem;
+    right: 9.8rem;
     cursor: pointer;
 }
 .eye-btn{
     cursor: pointer;
     position: absolute;
-    top: 8rem;
-    -webkit-top: 8rem;
-    right: 11rem;
+    top: 9.5rem;
+    -webkit-top: 9.5rem;
+    right: 9.8rem;
     font-size: 1.2rem;
 }
 .main-form .text{
     display: flex;
     font-size: .8rem;
     gap: 2.5rem;
-    width: 100%;
+    width: 50%;
     align-items: center;
-    justify-content: center;
     margin: .7rem;
     font-weight: 600;
 }
 .create-account{
     text-decoration: none;
-    color: black;
+    color: #0c9709;
+}
+.btn-forget{
+    text-decoration: none;
+    color: #0c9709;
 }
 .btn-submit{
-    margin-top: .5rem;
-    width: 45%;
-    padding: .5rem 0rem;
+    margin-top: 1.3rem;
+    width: 38%;
+    padding: .7rem 0rem;
     border-radius: .5rem;
     color: white;
     font-weight: bold;
-    background-color: green;
-    font-size: 1rem;
+    background-color: #087125;
+    font-size: 1.2rem;
     border: none;
     cursor: pointer;
     box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
@@ -133,6 +140,10 @@
 .btn-submit:hover{
     background: #538e41;
 }
+.login-section-logo{
+    display: none;
+}
+
 
 @media (max-width:768px) {
     .login-section{
@@ -147,30 +158,61 @@
         height: 100%;
     }
     .main-form form label{
-        width: 75%;
+        width: 90%;
     }
     .main-form form input{
-       width: 75%; 
+       width: 90%; 
     }
     .main-form{
         margin-top: 1rem;
+    }
+    .main-logo{
+    width: 6.5rem;
+    height: 2.6rem;
+    border-radius: .3rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    }
+    .main-logo img{
+    width: 6.5rem;
+    height: 2.6rem;
+    border-radius: .3rem;
     }
     .main-form form{
         margin-top: 0.4rem;
     }
     .eye-btn{
-        right: 3.5rem;
-        top: 8.1rem;
+        right: 1.8rem;
+        top: 9.5rem;
+    }
+    .main-form .text{
+        width: 90%;
+        justify-content: space-between;
+        font-size: 1rem;
+    }
+    .login-section-logo{
+        display: block;
     }
     .main-form .mail{
-        top: 3.1rem;
-        right: 3.5rem;
+        top: 3.8rem;
+        right: 1.8rem;
     }
     .logo{
         display: none;
     }
+    .main-form .title{
+        margin: 1rem 0rem 2rem 0rem;
+    }
     .title p{
         margin-left: 3rem;
+    }
+    .doctor-img-container{
+        display: none;
+    }
+    .main-form .btn-submit{
+        margin-top: 3.6rem;
+        width: 50%;
+        background-color: #087125;
     }
 }
 
@@ -224,7 +266,7 @@
 }
 .welcome-container h4{
     margin-top: .4rem;
-    background: linear-gradient(to right, #1fde99, #1d694e);
+    background: linear-gradient(to left, #1fde99, #1d694e);
     font-size: 1.5rem;
     background-clip: text;
     color: transparent;
@@ -281,9 +323,9 @@
     color: black;
 }
 .signup input{
-    border-radius: .3rem;
+    border-radius: .8rem;
     border: 2px solid rgb(88, 87, 87);
-    padding: .3rem .5rem;
+    padding: .4rem .5rem;
     font-size: 1rem;
     font-weight: 500;
     outline: none;
@@ -315,7 +357,7 @@
     margin: .8rem 0rem;
 }
 .checkbox p{
-    font-size: .8rem;
+    font-size: .7rem;
     width: 50%;
     opacity: .7;
 }
@@ -345,6 +387,8 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
+        border: 2px solid red;
     }
     .signup .name input::placeholder{
         font-size: .8rem;
@@ -376,7 +420,7 @@
     }
     .signup{
         margin-top: .3rem;
-        margin-left: 3rem;
+        margin-left: 1rem;
     }
     .signup .signup-title h3{
         font-size: 1.1rem;
@@ -387,14 +431,32 @@
     .signup .name{
         margin: .3rem;
     }
+    .signup .email-address input, .signup .password input, .signup .confirm-password input{
+        width: 90%;
+    }
     .signup input{
-        padding: .1rem 1rem .1rem .5rem;
+        padding: .4rem .3rem;
+        border-radius: .5rem;
     }
     .checkbox p{
         width: 75%;
     }
     .signup .gender{
         margin: .3rem 0rem;
+    }
+    .sigup-btn-container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .signup .btn-submit{
+        width: 50%;
+        padding: .8rem;
+        font-size: .8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
     }
     .signup .password{
         margin: .3rem 0rem;

@@ -586,6 +586,7 @@ header{
     width: 100%;
     height: 80vh;
     border-radius: .7rem;
+    object-fit: cover;
 }
 .get-started-section{
     width: 40%;
@@ -616,4 +617,48 @@ header{
     align-items: center;
     justify-content: center;
     margin-top: 11rem;
+}
+
+@media (max-width: 768px) {
+    .main-landing-section{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 90vh;
+        margin-top: 1rem;
+    }
+    .nurse-section{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nurse-img-container{
+        height: 45vh;
+        border-radius: .35rem;
+    }
+    .nurse-img-container img{
+        height: 45vh;
+        border-radius: .35rem;
+    }
+    .get-started-section{
+        width: 100%;
+    }
+    .get-started-section{
+        margin: 2.3rem 0rem;
+        padding: .4rem;
+    }
+    .get-started-title p{
+        font-size: .9rem;
+    }
+    .get-started-title .try{
+        margin-top: 1rem;
+    }
+    .get-started-btn-container{
+        margin-top: 3rem;
+    }
+    .btn-get-started{
+        width: 50%;
+        padding: .7rem 0rem;
+    }
 }

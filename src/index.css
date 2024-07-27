@@ -388,7 +388,6 @@
         display: flex;
         flex-direction: column;
         background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
-        border: 2px solid red;
     }
     .signup .name input::placeholder{
         font-size: .8rem;

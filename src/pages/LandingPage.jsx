@@ -20,7 +20,9 @@ const LandingPage = () => {
             <p className='try'>Try our Service</p>
           </div>
           <div className='get-started-btn-container'>
-            <Link to={'/signup'} className='btn-get-started'>Get Started</Link>
+            <Link to={"/signup"} className='btn-get-started'>
+              Get Started
+            </Link>
           </div>
         </div>
       </div>

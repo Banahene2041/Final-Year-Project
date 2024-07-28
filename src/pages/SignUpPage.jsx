@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../assets/logo.jpg"
 import logoPharmImg from "../assets/logo_pharm.jpg"
 import {Link} from "react-router-dom"
-// import { FaEnvelope } from "react-icons/fa6"
-// import { IoMdEyeOff } from "react-icons/io"
-// import { IoLockClosed } from "react-icons/io5"
+import { toast } from 'react-toastify'
 
 const SignInPage = () => {
+  const [surname,setSurname] = useState("")
+  const [firstname,setFirstName] = useState("")
+  const [birthDate,setBirthDate] = useState("")
+  const [gender,setGender] = useState("")
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  const [confirmPassword,setConfirmPassword] = useState("")
+
+  const handleSubmit = (e)=> {
+    e.preventDefault()
+    if (!surname || !firstname || !birthDate || !gender || !email || !password || !confirmPassword){
+      return toast("Provide Valid Credential")
+    }
+    if (password !== confirmPassword){
+      return toast.error("Password doesn't not much")
+    }
+  }
+
   return (
     <section className='signup-section'>
       <div className='hidden-container'>
@@ -36,7 +52,7 @@ const SignInPage = () => {
               </Link>
             </p>
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className='name'>
               <label htmlFor='name'>Enter your Name</label>
               <div>
@@ -45,6 +61,8 @@ const SignInPage = () => {
                   id='name'
                   required
                   name='surname'
+                  value={surname}
+                  onChange={(e)=>setSurname(e.target.value)}
                   placeholder='Surname'
                 />
                 <input
@@ -52,40 +70,29 @@ const SignInPage = () => {
                   id='name'
                   required
                   name='firstname'
+                  value={firstname}
+                  onChange={(e)=>setFirstName(e.target.value)}
                   placeholder='FirstName'
                 />
               </div>
             </div>
             <div className='birth-date'>
               <label htmlFor='birth-date'>Enter your Date of Birth</label>
-              {/* <select name="month" id="month">
-                <option value="" disabled selected>Month</option>
-                <option value="january">January</option>
-                <option value="february">February</option>
-                <option value="march">March</option>
-                <option value="april">April</option>
-                <option value="may">May</option>
-                <option value="june">June</option>
-                <option value="july">July</option>
-                <option value="August">August</option>
-                <option value="september">September</option>
-                <option value="october">October</option>
-                <option value="november">November</option>
-                <option value="december">December</option>
-              </select> */}
               <input
                 type='date'
                 min='1960-01-01'
                 max='2024-12-31'
                 required
                 name='date'
+                value={birthDate}
+                onChange={(e)=>setBirthDate(e.target.value)}
                 placeholder='Date'
                 id=' birth-date'
               />
             </div>
             <div className='gender'>
               <label htmlFor='gender'>Your Gender</label>
-              <select name='gender' required id='gender'>
+              <select name='gender' value={gender} onChange={(e)=>setGender(e.target.value)} required id='gender'>
                 <option value='' disabled selected>
                   Gender
                 </option>
@@ -99,6 +106,8 @@ const SignInPage = () => {
                 type='text'
                 placeholder='Enter your Email'
                 id='email'
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 required
               />
               {/* <FaEnvelope className='envelope' /> */}
@@ -109,6 +118,8 @@ const SignInPage = () => {
                 type='password'
                 placeholder='Enter your password'
                 id='password'
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
                 required
               />
               {/* <IoLockClosed className='lock' /> */}
@@ -119,6 +130,8 @@ const SignInPage = () => {
                 type='password'
                 required
                 id='confirm-password'
+                value={confirmPassword}
+                onChange={(e)=>setConfirmPassword(e.target.value)}
                 placeholder='Confirm Password'
               />
               {/* <IoMdEyeOff className='eye-close' /> */}
@@ -128,9 +141,9 @@ const SignInPage = () => {
               <p>By Signing Up you agree to the Terms and Conditions</p>
             </div>
             <div className='sigup-btn-container'>
-              <Link to={'/login'} type='submit' className='btn-submit btn-signup'>
+              <button type='submit' className='btn-submit btn-signup'>
                 Sign Up
-              </Link>
+              </button>
             </div>
           </form>
         </div>

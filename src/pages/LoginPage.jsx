@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import doctorImg from "../assets/doctors.jpg"
 import logoPharmImg from "../assets/logo_pharm.jpg"
 import logo from "../assets/logo.jpg"
@@ -9,7 +9,10 @@ import { Link } from "react-router-dom"
 import Logo from '../components/Logo'
 
 const LoginPage = () => {
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
   const [showPassword,setShowPassword] = React.useState(false)
+
   return (
     <section className='login-section'>
       <div className='login-section-logo'>
@@ -35,6 +38,8 @@ const LoginPage = () => {
                 type='text'
                 name='email'
                 id='email'
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 placeholder='Enter your Email'
                 required
               />
@@ -43,9 +48,11 @@ const LoginPage = () => {
             <div className='password'>
               <label htmlFor='password'>Password</label>
               <input
-                type='password'
+                type={`${showPassword?'text':'password'}`}
                 name='password'
                 id='password'
+                value={password}
+                onChange={(e)=> setPassword(e.target.value)}
                 placeholder='Enter your Password'
                 required
               />

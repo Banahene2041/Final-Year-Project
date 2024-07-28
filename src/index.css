@@ -659,6 +659,67 @@ header{
 .open-nav-links{
     transform: translateX(0%);
 }
+.forgot-password{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.forgot-password h3{
+    margin: 4rem 0rem 1rem 0rem;
+}
+.forgot-password p{
+    width: 30%;
+    opacity: .9;
+}
+.forgot-password form{
+    margin-top: 2rem;
+}
+.forgot-password-input{
+    display: flex;
+    flex-direction: column;
+}
+.forgot-password label{
+    margin-bottom: .4rem;
+    font-weight: 600;
+}
+.forgot-password input{
+    width: 20rem;
+    border-radius: .8rem;
+    border: 2px solid rgb(88, 87, 87);
+    padding: .4rem .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    background: transparent;
+}
+.forgot-password-container{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.forgot-btn{
+    color: white;
+    border: none;
+    background: #087125;
+    width: 50%;
+    padding: .5rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.forgot-password h5{
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    font-weight: 600;
+    font-size: .9rem;
+}
+.forgot-password h5 a{
+    text-decoration: none;
+    color: #0c9709;
+}
 
 @media (max-width: 768px) {
     .main-landing-section{
@@ -710,5 +771,15 @@ header{
     }
     .nav-links li a{
         font-size: 1.2rem;
+    }
+    .forgot-password h3{
+        margin: 1rem 0rem 1rem 0rem;
+    }
+    .forgot-password p{
+    width: 85%;
+    font-size: 1rem;
+    }
+    .forgot-password-container{
+        margin-top: 4rem;
     }
 }

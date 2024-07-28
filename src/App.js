@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage'
 import LandingPage from './pages/LandingPage'
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import ForgetPassword from './pages/ForgetPassword'
 // pages
 
 
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/' element={<LandingPage />} />
         <Route path='/signup' element={<SignInPage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/forgot-password' element={<ForgetPassword />} />
       </Routes>
     </>
   )

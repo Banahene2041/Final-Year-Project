@@ -68,7 +68,7 @@ const LoginPage = () => {
               <Link className='create-account' to={"/signup"}>
                 Create an Account
               </Link>
-              <Link className='btn-forget'>Forgot Password?</Link>
+              <Link className='btn-forget' to={"/forgot-password"}>Forgot Password?</Link>
             </div>
             <button className='btn-submit' type='submit'>
               Login

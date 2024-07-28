@@ -19,7 +19,7 @@ const SignInPage = () => {
       return toast("Provide Valid Credential")
     }
     if (password !== confirmPassword){
-      return toast.error("Password doesn't not much")
+      return toast.error("Password does not much")
     }
   }
 

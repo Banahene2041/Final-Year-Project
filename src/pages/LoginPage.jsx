@@ -34,41 +34,47 @@ const LoginPage = () => {
           <form>
             <div className='email'>
               <label htmlFor='email'>Email</label>
-              <input
-                type='text'
-                name='email'
-                id='email'
-                value={email}
-                onChange={(e)=>setEmail(e.target.value)}
-                placeholder='Enter your Email'
-                required
-              />
+              <div className='email-input-container'>
+                <input
+                  type='text'
+                  name='email'
+                  id='email'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder='Enter your Email'
+                  required
+                />
+                <FaEnvelope className='mail' />
+              </div>
             </div>
-            <FaEnvelope className='mail' />
             <div className='password'>
               <label htmlFor='password'>Password</label>
-              <input
-                type={`${showPassword?'text':'password'}`}
-                name='password'
-                id='password'
-                value={password}
-                onChange={(e)=> setPassword(e.target.value)}
-                placeholder='Enter your Password'
-                required
-              />
+              <div className='password-input-container'>
+                <input
+                  type={`${showPassword ? "text" : "password"}`}
+                  name='password'
+                  id='password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder='Enter your Password'
+                  required
+                />
+                <p
+                  className='eye-btn'
+                  type='button'
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <IoEyeSharp /> : <IoMdEyeOff />}
+                </p>
+              </div>
             </div>
-            <p
-              className='eye-btn'
-              type='button'
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <IoEyeSharp /> : <IoMdEyeOff />}
-            </p>
             <div className='text'>
               <Link className='create-account' to={"/signup"}>
                 Create an Account
               </Link>
-              <Link className='btn-forget' to={"/forgot-password"}>Forgot Password?</Link>
+              <Link className='btn-forget' to={"/forgot-password"}>
+                Forgot Password?
+              </Link>
             </div>
             <button className='btn-submit' type='submit'>
               Login

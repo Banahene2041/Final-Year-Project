@@ -11,6 +11,7 @@ const Context = ({ children }) => {
       value={{
         isNavbarOpen,
         openNavbar,
+        setIsNavbarOpen,
       }}
     >
       {children}

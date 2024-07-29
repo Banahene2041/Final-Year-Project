@@ -3,6 +3,8 @@ import logo from "../assets/logo.jpg"
 import logoPharmImg from "../assets/logo_pharm.jpg"
 import {Link} from "react-router-dom"
 import { toast } from 'react-toastify'
+import { FaEnvelope } from "react-icons/fa6"
+import { IoMdEyeOff } from "react-icons/io"
 
 const SignInPage = () => {
   const [surname,setSurname] = useState("")
@@ -62,7 +64,7 @@ const SignInPage = () => {
                   required
                   name='surname'
                   value={surname}
-                  onChange={(e)=>setSurname(e.target.value)}
+                  onChange={(e) => setSurname(e.target.value)}
                   placeholder='Surname'
                 />
                 <input
@@ -71,7 +73,7 @@ const SignInPage = () => {
                   required
                   name='firstname'
                   value={firstname}
-                  onChange={(e)=>setFirstName(e.target.value)}
+                  onChange={(e) => setFirstName(e.target.value)}
                   placeholder='FirstName'
                 />
               </div>
@@ -85,14 +87,20 @@ const SignInPage = () => {
                 required
                 name='date'
                 value={birthDate}
-                onChange={(e)=>setBirthDate(e.target.value)}
+                onChange={(e) => setBirthDate(e.target.value)}
                 placeholder='Date'
                 id=' birth-date'
               />
             </div>
             <div className='gender'>
               <label htmlFor='gender'>Your Gender</label>
-              <select name='gender' value={gender} onChange={(e)=>setGender(e.target.value)} required id='gender'>
+              <select
+                name='gender'
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                required
+                id='gender'
+              >
                 <option value='' disabled selected>
                   Gender
                 </option>
@@ -102,39 +110,45 @@ const SignInPage = () => {
             </div>
             <div className='email-address'>
               <label htmlFor='email'>Email</label>
-              <input
-                type='text'
-                placeholder='Enter your Email'
-                id='email'
-                value={email}
-                onChange={(e)=>setEmail(e.target.value)}
-                required
-              />
-              {/* <FaEnvelope className='envelope' /> */}
+              <div className='signup-input-container'>
+                <input
+                  type='text'
+                  placeholder='Enter your Email'
+                  id='email'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <FaEnvelope className='mail' />
+              </div>
             </div>
             <div className='password'>
               <label htmlFor='password'>Password</label>
-              <input
-                type='password'
-                placeholder='Enter your password'
-                id='password'
-                value={password}
-                onChange={(e)=>setPassword(e.target.value)}
-                required
-              />
-              {/* <IoLockClosed className='lock' /> */}
+              <div className='signup-input-container'>
+                <input
+                  type='password'
+                  placeholder='Enter your password'
+                  id='password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <IoMdEyeOff className='eye-btn'/>
+              </div>
             </div>
             <div className='confirm-password'>
               <label htmlFor='confirm-password'>Confrim your Password</label>
-              <input
-                type='password'
-                required
-                id='confirm-password'
-                value={confirmPassword}
-                onChange={(e)=>setConfirmPassword(e.target.value)}
-                placeholder='Confirm Password'
-              />
-              {/* <IoMdEyeOff className='eye-close' /> */}
+              <div className='signup-input-container'>
+                <input
+                  type='password'
+                  required
+                  id='confirm-password'
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder='Confirm Password'
+                />
+                <IoMdEyeOff className='eye-btn' />
+              </div>
             </div>
             <div className='checkbox'>
               <input type='checkbox' id='checkbox' required />

@@ -1,28 +1,34 @@
 import React, { useState } from 'react'
 import logo from "../assets/logo.jpg"
 import logoPharmImg from "../assets/logo_pharm.jpg"
-import {Link} from "react-router-dom"
-import { toast } from 'react-toastify'
+import { Link, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 import { FaEnvelope } from "react-icons/fa6"
 import { IoMdEyeOff } from "react-icons/io"
 
 const SignInPage = () => {
-  const [surname,setSurname] = useState("")
-  const [firstname,setFirstName] = useState("")
-  const [birthDate,setBirthDate] = useState("")
-  const [gender,setGender] = useState("")
-  const [email,setEmail] = useState("")
-  const [password,setPassword] = useState("")
-  const [confirmPassword,setConfirmPassword] = useState("")
+  const navigate = useNavigate()
+  const [surname, setSurname] = useState("")
+  const [firstname, setFirstName] = useState("")
+  const [birthDate, setBirthDate] = useState("")
+  const [gender, setGender] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
 
-  const handleSubmit = (e)=> {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    if (!surname || !firstname || !birthDate || !gender || !email || !password || !confirmPassword){
+    if (!surname || !firstname || !birthDate || !gender || !email || !password || !confirmPassword) {
       return toast("Provide Valid Credential")
     }
-    if (password !== confirmPassword){
+    if (password.length < 8 || confirmPassword.length < 8) {
+      return toast.error("Password must be more than 8 characters")
+    }
+    if (password !== confirmPassword) {
       return toast.error("Password does not much")
     }
+    toast.success("Please check your email and confirm your account")
+    navigate("/login")
   }
 
   return (
@@ -133,7 +139,7 @@ const SignInPage = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-                <IoMdEyeOff className='eye-btn'/>
+                <IoMdEyeOff className='eye-btn' />
               </div>
             </div>
             <div className='confirm-password'>

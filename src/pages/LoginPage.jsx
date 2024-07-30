@@ -7,11 +7,19 @@ import { IoMdEyeOff } from "react-icons/io"
 import { IoEyeSharp } from "react-icons/io5"
 import { Link } from "react-router-dom"
 import Logo from '../components/Logo'
+import { toast } from 'react-toastify'
 
 const LoginPage = () => {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
   const [showPassword,setShowPassword] = React.useState(false)
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    if (password.length < 8){
+      return toast.error("Password must be more than 8 characters")
+    }
+  }
 
   return (
     <section className='login-section'>
@@ -31,7 +39,7 @@ const LoginPage = () => {
               Login to GIV <img src={logo} alt='' /> PHARM
             </p>
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className='email'>
               <label htmlFor='email'>Email</label>
               <div className='email-input-container'>

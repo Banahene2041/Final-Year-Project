@@ -694,6 +694,12 @@ header{
     text-decoration: none;
     color: #0c9709;
 }
+.disableBtn{
+    background: #48624f;
+}
+.disableBtn:hover{
+    background: #48624f;
+}
 
 @media (max-width: 1024px) {
     .main-landing-section{

@@ -8,6 +8,7 @@ import RecentDrugs from "../components/RecentDrugs"
 import NurseContact from "../components/NurseContact"
 import TopPicksDrugs from "../components/TopPicksDrugs"
 import Backbone from "../components/Backbone"
+import News from "../components/News"
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
         <Hero />
         <div className='pharm-info'>
           <Title text={"Pharmacy Service"} />
-          <p>We provide</p>
+          <p className="title-info">We understand that buying medication can be frustrating and time-consuming.Often,visting a pharmacy can be disappointing when the desired product is unavailable. To address this isssue,our platform aims to provide a conveniet online experience for purchasing drugs,saving you time and reducing stress associated with in-store visits.</p>
         </div>
         <Title text={"Recent Added Drugs"} />
         <section className="recent-section">
@@ -31,6 +32,10 @@ const Home = () => {
           <TopPicksDrugs/>
         </section>
         <Backbone/>
+        <section className="news-section">
+          <Title text={'Health News'}/>
+          <News/>
+        </section>
       </section>
     </>
   )

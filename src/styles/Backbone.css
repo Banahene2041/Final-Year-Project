@@ -3,6 +3,7 @@
     justify-content: start;
     gap: 4rem;
     padding-inline: 8%;
+    padding-bottom: 2rem;
 }
 .developer-img-container{
     width: 15rem;

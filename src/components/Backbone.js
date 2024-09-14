@@ -25,7 +25,7 @@ const Backbone = () => {
       </div>
       <Developer
         image={assets.developerOne}
-        name='Mensah Epaha Ishmeal'
+        name='Mensah Epaha Ishmael'
         role='Assistant Project Manager, User requirement Analyst'
         character='Hardworking, Calm and Humble'
       />

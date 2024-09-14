@@ -6,20 +6,30 @@ import LandingPage from './pages/LandingPage'
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import ForgetPassword from './pages/ForgetPassword'
-// pages
-
+import Home from './pages/Home'
+import ProfilePage from './pages/ProfilePage'
+import ResetPassword from './pages/ResetPassword'
+import ContactPage from "./pages/ContactPage"
+import About from "./pages/About"
+import Category from './pages/Category'
 
 const App = () => {
   return (
-    <>
+    <div className='app-side'>
       <ToastContainer />
       <Routes>
         <Route path='/' element={<LandingPage />} />
-        <Route path='/signup' element={<SignInPage />} />
+        <Route path='/register' element={<SignInPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/forgot-password' element={<ForgetPassword />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/contact' element={<ContactPage />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/category' element={<Category />} />
+        <Route path='/reset-password/:id/:token' element={<ResetPassword />} />
       </Routes>
-    </>
+    </div>
   )
 }
 

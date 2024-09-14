@@ -1,13 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import logo from "../assets/logo.jpg"
 import logoPharmImg from "../assets/logo_pharm.jpg"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import { FaEnvelope } from "react-icons/fa6"
 import { IoMdEyeOff } from "react-icons/io"
+import { IoEyeSharp } from "react-icons/io5"
+import axios from "axios"
+import { useGlobalContext } from "../context"
 
 const SignInPage = () => {
   const navigate = useNavigate()
+  const { url } = useGlobalContext()
+  const [showPassword, setShowPassword] = React.useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = React.useState(false)
   const [surname, setSurname] = useState("")
   const [firstname, setFirstName] = useState("")
   const [birthDate, setBirthDate] = useState("")
@@ -15,20 +21,38 @@ const SignInPage = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
+  const [loading, setLoading] = React.useState(false)
 
-  const handleSubmit = (e) => {
+  const data = {
+    surname,
+    firstname,
+    birthDate,
+    gender,
+    email,
+    password,
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!surname || !firstname || !birthDate || !gender || !email || !password || !confirmPassword) {
-      return toast("Provide Valid Credential")
-    }
+    setLoading(true)
     if (password.length < 8 || confirmPassword.length < 8) {
+      setLoading(false)
       return toast.error("Password must be more than 8 characters")
     }
     if (password !== confirmPassword) {
-      return toast.error("Password does not much")
+      setLoading(false)
+      return toast.error("Passwords do not much")
     }
-    toast.success("Please check your email and confirm your account")
-    navigate("/login")
+    try {
+      const response = await axios.post(`${url}/register`, data)
+      localStorage.setItem("userData", JSON.stringify(response.data))
+      setLoading(false)
+      toast.success("successfully registered")
+      navigate("/login")
+    } catch (err) {
+      setLoading(false)
+      toast.error(err.response.data.message || err.error)
+    }
   }
 
   return (
@@ -107,7 +131,7 @@ const SignInPage = () => {
                 required
                 id='gender'
               >
-                <option value='' disabled selected>
+                <option value='' disabled>
                   Gender
                 </option>
                 <option value='male'>Male</option>
@@ -132,28 +156,40 @@ const SignInPage = () => {
               <label htmlFor='password'>Password</label>
               <div className='signup-input-container'>
                 <input
-                  type='password'
+                  type={`${showPassword ? "text" : "password"}`}
                   placeholder='Enter your password'
                   id='password'
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-                <IoMdEyeOff className='eye-btn' />
+                <p
+                  className='eye-btn'
+                  type='button'
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <IoEyeSharp /> : <IoMdEyeOff />}
+                </p>
               </div>
             </div>
             <div className='confirm-password'>
               <label htmlFor='confirm-password'>Confrim your Password</label>
               <div className='signup-input-container'>
                 <input
-                  type='password'
+                  type={`${showConfirmPassword ? "text" : "password"}`}
                   required
                   id='confirm-password'
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder='Confirm Password'
                 />
-                <IoMdEyeOff className='eye-btn' />
+                <p
+                  className='eye-btn'
+                  type='button'
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? <IoEyeSharp /> : <IoMdEyeOff />}
+                </p>
               </div>
             </div>
             <div className='checkbox'>
@@ -162,7 +198,7 @@ const SignInPage = () => {
             </div>
             <div className='sigup-btn-container'>
               <button type='submit' className='btn-submit btn-signup'>
-                Sign Up
+                {loading ? "Loading..." : "Sign Up"}
               </button>
             </div>
           </form>

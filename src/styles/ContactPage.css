@@ -1,0 +1,194 @@
+.contact-section{
+    background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
+    width: 100%;
+    min-height: 88vh;
+}
+
+main{
+    margin-top: 6rem;
+    display: flex;
+    width: 100%;
+}
+.contact-form-section{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    margin-left: 2rem;
+    h3{
+        padding-left: 4rem;
+        font-size: 1.2rem;
+        margin-bottom: .2rem;
+    }
+    p{
+        padding-left: 6rem;
+        opacity: .8;
+        margin-bottom: .5rem;
+    }
+}
+.contact-name{
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+.contact-email, .contact-subject, .contact-problem{
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+}
+.contact-name label, .contact-email label, .contact-subject label, .contact-problem label{
+    margin-bottom: .3rem;
+}
+.contact-name input, .contact-email input{
+    border-radius: .8rem;
+    border: 2px solid rgb(88, 87, 87);
+    padding: .4rem .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    background: transparent;
+    margin-bottom: .5rem;
+}
+.contact-subject textarea, .contact-problem textarea{
+    margin-bottom: .5rem;
+    border: 2px solid rgb(88, 87, 87);
+    height: 3rem;
+    resize: none;
+    border-radius: .4rem;
+    outline: none;
+    background: transparent;
+}
+.contact-problem textarea{
+    height: 4rem;
+}
+.img-section{
+    width: 65%;
+}
+.img-container{
+    padding-top: 1rem;
+    width: 100%;
+    height: 25rem;
+    padding-left: 10rem;
+    background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
+}
+.img-container img{
+    width: 23rem;
+    border-radius: 50%;
+    height: 23rem;
+    object-fit: cover;
+}
+.btn-container{
+    width: 25rem;
+    display: flex;
+    justify-content: end;
+    margin-top: .3rem;
+}
+.btn-container button{
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    color: white;
+    font-weight: bold;
+    background-color: #087125;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.call h4{
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: .3rem;
+}
+.call h5{
+    font-size: .9rem;
+}
+.call h5 span{
+    color: red;
+    font-size: 1.05rem;
+}
+.call h6{
+    margin-top: .4rem;
+    opacity: .65;
+    font-size: .9rem;
+    width: 75%;
+}
+.call h3{
+    margin-top: .5rem;
+    font-size: 1rem;
+}
+
+@media (max-width:768px) {
+    .contact-section{
+        margin-top: 1rem;
+    }  
+    main{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6rem;
+    } 
+    .contact-form-section{
+        width: 100%;
+        margin-left: .4rem;
+        h3{
+            padding-left: 1.8rem;
+        }
+    }
+    .contact-form-section p{
+        padding-left: 3rem;
+    }
+    .img-section{
+        display: none;
+    }
+    .contact-name{
+        width: 18rem;
+    }
+    .contact-email, .contact-subject, .contact-problem{
+        width: 20rem;
+    }
+    .btn-container{
+        width: 20rem;
+    }
+    .call{
+        width: 90%;
+    }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+    .contact-section{
+        margin-top: 1rem;
+    }  
+    main{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10rem;
+    } 
+    .contact-form-section{
+        width: 100%;
+        margin-left: .4rem;
+        h3{
+            padding-left: 1.8rem;
+        }
+    }
+    .contact-form-section p{
+        padding-left: 3rem;
+    }
+    .img-section{
+        display: none;
+    }
+    .contact-name{
+        width: 18rem;
+    }
+    .contact-email, .contact-subject, .contact-problem{
+        width: 20rem;
+    }
+    .btn-container{
+        width: 20rem;
+    }
+    .call{
+        width: 90%;
+    }
+}
+
+

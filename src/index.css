@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: "Koh Santepheap", serif;
 }
+
 .login-section{
     height: 100vh;
     width: 100vw;
@@ -98,6 +99,10 @@
 .create-account{
     text-decoration: none;
     color: #0c9709;
+}
+.text{
+    display: flex;
+    justify-content: space-between;
 }
 .btn-forget{
     text-decoration: none;
@@ -536,9 +541,60 @@ header{
     justify-content: space-between;
     padding: 0rem 3%;
     align-items: center;
-    background: #fff;
+    background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
     z-index: 10;
     transition: .3s;
+}
+.logout-btn{
+    background: #14b789;
+    font-size: 1rem;
+    padding: .4rem .7rem;
+    border-radius: .3rem;
+    cursor: pointer;
+    border: none;
+
+}
+.burger-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}
+.profile-drop-down{
+    position: relative;
+}
+.profile-drop-down span{
+    cursor: pointer;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+.drop-down-icon{
+    font-size: 1.5rem;
+}
+.profile-container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+    transition: .2s;
+    background: #e1e0e0;
+    border-radius: .2rem;
+    visibility: hidden;
+    transition: .2s;
+}
+.show-profile{
+    visibility: visible;
+}
+.profile-container a{
+    text-decoration: none;
+    color: black;
+    padding: .1rem 0rem .2rem .5rem;
+}
+.profile-container a:hover{
+    background: rgb(199, 198, 198);
 }
 .burger-section .burger{
     font-size: 2rem;
@@ -546,6 +602,10 @@ header{
     cursor: pointer;
     font-weight: 200;
     transition: .3s;
+}
+.greeting-avatar{
+    width: 2rem;
+    height: 2rem;
 }
 
 .main-landing-section{
@@ -613,9 +673,10 @@ header{
     height: 90vh;
     width: 20%;
     background: #BAF9C1;
-    padding: 1.5rem;
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
     transform: translateX(100%);
     transition: .5s ease-in-out;
+    padding-top: .5rem;
 }
 .nav-links ul li{
     list-style: none;
@@ -624,21 +685,60 @@ header{
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: #000;
+    /* color: #000; */
     margin-bottom: 2rem;
 }
+.active-link{
+    color: red;
+}
+
 .nav-links ul li a span{
     margin-right: .6rem;
 }
 .open-nav-links{
     transform: translateX(0%);
 }
+.profile-avatar{
+    width: 100%;
+    margin-bottom: .5rem;
+    border-bottom: 2px solid #7b7a7a;
+}
+.avarta-img-container{
+    width: 4rem;
+    height: 4rem;
+}
+.avarta-img-container a img{
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+.email-profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.email-accout-icon{
+    color: red;
+    font-size: 1.2rem;
+}
+.user-name{
+    font-weight: 600;
+    font-size: .75rem;
+    margin-top: .35rem;
+}
+.email-profile p{
+    font-size: .75rem;
+    color: #686767;
+    margin-bottom: .5rem;
+}
 .forgot-password{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
 }
 .forgot-password h3{
     margin: 4rem 0rem 1rem 0rem;
@@ -762,4 +862,65 @@ header{
     .forgot-password-container{
         margin-top: 4rem;
     }
+    .profile-drop-down{
+        display: none;
+    }
+}
+
+.splide__track {
+  margin: 0;
+  padding: 0;
+}
+
+.splide__arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.splide__arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.splide__arrow--prev {
+  left: 20px;
+}
+
+.splide__arrow--next {
+  right: 20px;
+}
+
+.splide__pagination__page {
+  background-color: #ccc;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  margin-right: 0rem;
+  transition: background-color 0.3s ease;
+}
+
+.splide__pagination__page.is-active {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .splide__arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .splide__arrow--prev {
+    left: 15px;
+  }
+
+  .splide__arrow--next {
+    right: 15px;
+  }
 }

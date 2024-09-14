@@ -1,13 +1,30 @@
 import React, { useState } from "react"
 import Logo from "../components/Logo"
 import { Link } from "react-router-dom"
-// import { toast } from "react-toastify"
+import { toast } from "react-toastify"
+import axios from "axios"
+import { useGlobalContext } from "../context"
 
 const ForgetPassword = () => {
+  const { url } = useGlobalContext()
   const [email, setEmail] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e) => {
+  const data = {
+    email,
+  }
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
+    try {
+      const response = await axios.post(`${url}/forgot-password`, data)
+      setIsLoading(false)
+      toast.success("We have emailed your password reset link")
+      setEmail("")
+    } catch (err) {
+      toast.error(err.response.data.message || err.error)
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -34,11 +51,11 @@ const ForgetPassword = () => {
           </div>
           <div className='forgot-password-container'>
             <button type='submit' className='forgot-btn'>
-              Reset Password
+              {isLoading ? "Loading..." : "Reset Password"}
             </button>
           </div>
           <h5>
-            Don't have an Account? <Link to={"/signup"}>Sign Up</Link>
+            Don't have an Account? <Link to={"/register"}>Sign Up</Link>
           </h5>
         </form>
       </div>

@@ -1,23 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import doctorImg from "../assets/doctors.jpg"
 import logoPharmImg from "../assets/logo_pharm.jpg"
 import logo from "../assets/logo.jpg"
 import { FaEnvelope } from "react-icons/fa6"
 import { IoMdEyeOff } from "react-icons/io"
 import { IoEyeSharp } from "react-icons/io5"
-import { Link } from "react-router-dom"
-import Logo from '../components/Logo'
-import { toast } from 'react-toastify'
+import { Link, useNavigate } from "react-router-dom"
+import Logo from "../components/Logo"
+import { toast } from "react-toastify"
+import axios from "axios"
+import { useGlobalContext } from "../context"
+
 
 const LoginPage = () => {
-  const [email,setEmail] = useState("")
-  const [password,setPassword] = useState("")
-  const [showPassword,setShowPassword] = React.useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const { setUserData, url, userData } = useGlobalContext()
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [showPassword, setShowPassword] = React.useState(false)
 
-  const handleSubmit = (e)=>{
+  const data = {
+    email,
+    password,
+  }
+
+  React.useEffect(() => {
+    if (userData) {
+      navigate("/home")
+    }
+  }, [navigate, userData])
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (password.length < 8){
-      return toast.error("Password must be more than 8 characters")
+    setIsLoading(true)
+    if (password.length < 8) {
+      toast.error("Password must be more than 8 characters")
+      setIsLoading(false)
+    }
+    else{
+      try {
+        const response = await axios.post(`${url}/login`, data)
+        localStorage.setItem("userData", JSON.stringify(response.data.userData))
+        setUserData(response.data.userData)
+        navigate("/home")
+        toast.success("login successful")
+        setIsLoading(false)
+      } catch (err) {
+        setIsLoading(false)
+        toast.error(err.response.data.message || err.error)
+      }
     }
   }
 
@@ -77,7 +109,7 @@ const LoginPage = () => {
               </div>
             </div>
             <div className='text'>
-              <Link className='create-account' to={"/signup"}>
+              <Link className='create-account' to={"/register"}>
                 Create an Account
               </Link>
               <Link className='btn-forget' to={"/forgot-password"}>
@@ -85,7 +117,7 @@ const LoginPage = () => {
               </Link>
             </div>
             <button className='btn-submit' type='submit'>
-              Login
+              {isLoading ? 'Loading...' : "Login"}
             </button>
           </form>
         </div>

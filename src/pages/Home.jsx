@@ -9,6 +9,7 @@ import NurseContact from "../components/NurseContact"
 import TopPicksDrugs from "../components/TopPicksDrugs"
 import Backbone from "../components/Backbone"
 import News from "../components/News"
+import Footer from "../components/Footer"
 
 const Home = () => {
   return (
@@ -37,6 +38,7 @@ const Home = () => {
           <News/>
         </section>
       </section>
+      <Footer/>
     </>
   )
 }

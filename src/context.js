@@ -16,8 +16,10 @@ const Context = ({ children }) => {
   }
 
   // url to the backend server
-  const url = "http://localhost:5000/api/users"
-  const drugUrl = "http://localhost:5000/api/drug"
+  const url =
+    "https://final-year-project-defense-backend.onrender.com/api/users"
+  const drugUrl =
+    "https://final-year-project-defense-backend.onrender.com/api/drug"
 
   // userData
   const [userData, setUserData] = useState(() => {

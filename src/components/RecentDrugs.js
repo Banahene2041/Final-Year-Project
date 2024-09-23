@@ -3,6 +3,7 @@ import { useGlobalContext } from '../context'
 import axios from 'axios'
 import LoaderOne from '../components/LoaderTwo'
 import { FaCediSign } from "react-icons/fa6"
+import { Link } from 'react-router-dom'
 
 const RecentDrugs = () => {
     const { drugUrl } = useGlobalContext()
@@ -45,10 +46,12 @@ const RecentDrugs = () => {
           return (
             <div key={item._id} className='drug-container'>
               <div className='image-container'>
-                <img
-                  src={`http://localhost:5000/images/${item.image}`}
-                  alt={item.name}
-                />
+                <Link to={`/singledrug/${item._id}`}>
+                  <img
+                    src={`http://localhost:5000/images/${item.image}`}
+                    alt={item.name}
+                  />
+                </Link>
               </div>
               <div className='drug-content'>
                 <p>{item.category}</p>

@@ -12,6 +12,7 @@ import ResetPassword from './pages/ResetPassword'
 import ContactPage from "./pages/ContactPage"
 import About from "./pages/About"
 import Category from './pages/Category'
+import SingleDrug from "./pages/SingleDrug"
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/about' element={<About />} />
         <Route path='/category' element={<Category />} />
         <Route path='/reset-password/:id/:token' element={<ResetPassword />} />
+        <Route path='/singledrug/:id' element={<SingleDrug />} />
       </Routes>
     </div>
   )

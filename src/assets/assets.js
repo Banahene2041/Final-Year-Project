@@ -8,6 +8,8 @@ import developerOne from '../assets/images/victor.jpg'
 import akufo_addo from "../assets/images/akufo.jpg"
 import health_image from "../assets/images/health_image.jpg"
 import otomfour from "../assets/images/otumfour.jpg"
+import cartoon from '../assets/images/cartoon.jpg'
+import logo_pharm from '../assets/logo_pharm.jpg'
 
 export const assets = {
   just_image,
@@ -20,4 +22,6 @@ export const assets = {
   akufo_addo,
   health_image,
   otomfour,
+  cartoon,
+  logo_pharm,
 }

@@ -1,3 +1,109 @@
 .footer-section{
-    background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
+    background: linear-gradient(to bottom,#e4f1e4,#e1f5de,#e6f8e6);
+}
+
+.footer-section h3{
+    color: #807e7e;
+    text-align: center;
+}
+.copyright{
+    background-color: #fff;
+    font-weight: 600;
+    color: black;
+}
+.footer-img-container{
+    width: 12rem;
+    height: 5rem;
+    border-radius: .3rem;
+}
+.footer-img-container img{
+    width: 12rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+.footer-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 2rem 1rem 0rem 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #b4b0b0;
+}
+.footer-content h2{
+    font-size: 1.2rem;
+}
+.footer-first-section{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+.footer-second-section{
+    width: 65%;
+    margin-bottom: 1.6rem;
+}
+.footer-content h3{
+    font-size: 1rem;
+}
+.footer-second-section p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.footer-second-section h4{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.footer-second-section .footer-contact{
+    font-size: 1rem;
+    margin-top: .1rem;
+}
+
+@media (max-width:768px) {
+    .footer-section{
+        padding-top: 1rem;
+    }
+    .footer-section h3{
+        font-size: .75rem;
+    }
+    .footer-img-container{
+        width: 8rem;
+        height: 3rem;
+    }
+    .footer-img-container img{
+        width: 8rem;
+        height: 3rem;
+    }
+    .footer-content{
+        flex-direction: column;
+        gap: .8rem;
+        padding: .3rem .3rem .2rem .3rem;
+        margin-bottom: .5rem;
+    }
+    .footer-content h2{
+        font-size: 1.16rem;
+    }
+    .footer-first-section{
+        width: 100%;
+        gap: .5rem;
+        align-items: flex-start;
+    }
+    .footer-second-section{
+        width: 100%;
+        margin-bottom: .6rem;
+    }
+    .footer-second-section p{
+        font-size: 1rem;
+        margin-bottom: .8rem;
+    }
+    .footer-second-section h4{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .footer-second-section .footer-contact{
+        font-weight: 600;
+    }
 }

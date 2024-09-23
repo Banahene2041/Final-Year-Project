@@ -4,6 +4,7 @@ import "@splidejs/splide/dist/css/splide.min.css"
 import { useGlobalContext } from "../context"
 import axios from "axios"
 import { FaCediSign } from "react-icons/fa6"
+import { Link } from "react-router-dom"
 
 const TopPicksDrugs = () => {
   const { drugUrl } = useGlobalContext()
@@ -50,10 +51,12 @@ const TopPicksDrugs = () => {
               <SplideSlide key={item._id}>
                 <div className='drug-card'>
                   <div className='drug-image'>
-                    <img
-                      src={`http://localhost:5000/images/${item.image}`}
-                      alt={item.name}
-                    />
+                    <Link to={`/singledrug/${item._id}`}>
+                      <img
+                        src={`http://localhost:5000/images/${item.image}`}
+                        alt={item.name}
+                      />
+                    </Link>
                   </div>
                   <div className='drug-details'>
                     <p>{item.category}</p>

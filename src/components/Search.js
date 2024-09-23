@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5"
 import axios from "axios"
 import LoaderTwo from "../components/LoaderTwo"
 import { FaCediSign } from "react-icons/fa6"
+import { Link } from "react-router-dom"
 
 const Search = () => {
   const { drugUrl } = useGlobalContext()
@@ -59,14 +60,16 @@ const Search = () => {
             return (
               <div key={item._id} className='drug-container'>
                 <div className='image-container'>
-                  <img
-                    src={`http://localhost:5000/images/${item.image}`}
-                    alt={item.name}
-                  />
+                  <Link to={`/singledrug/${item._id}`}>
+                    <img
+                      src={`http://localhost:5000/images/${item.image}`}
+                      alt={item.name}
+                    />
+                  </Link>
                 </div>
                 <div className='drug-content'>
                   <p>{item.category}</p>
-                  <p className="drug-name">{item.name}</p>
+                  <p className='drug-name'>{item.name}</p>
                   <p className='drug-price'>
                     <span>
                       <FaCediSign className='currency-sign' />

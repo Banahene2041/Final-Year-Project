@@ -148,6 +148,7 @@
 @media (max-width:1024px) {
     .login-section{
         flex-direction: column;
+        background: linear-gradient(to bottom, #ffffff,#f5fcf4,#e6f8e6);
     }
     .doctor-img-container{
         width: 100%;

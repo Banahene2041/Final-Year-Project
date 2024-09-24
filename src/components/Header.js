@@ -78,7 +78,7 @@ const Header = () => {
                     }}
                   >
                     <span>{icon}</span>
-                    {userData&& index === 4?<button className='logout-btn' onClick={logout}>logout</button>:`${name}`}
+                    {userData&& index === 3?<button className='logout-btn' onClick={logout}>logout</button>:`${name}`}
                   </NavLink>
                 </li>
               </ul>

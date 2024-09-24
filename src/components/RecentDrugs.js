@@ -6,7 +6,7 @@ import { FaCediSign } from "react-icons/fa6"
 import { Link } from 'react-router-dom'
 
 const RecentDrugs = () => {
-    const { drugUrl } = useGlobalContext()
+    const { drugUrl,imageUrl } = useGlobalContext()
     const [loading, setLoading] = useState(false)
     const [product, setProduct] = useState([])
 
@@ -33,12 +33,6 @@ const RecentDrugs = () => {
         )
     }
 
-    // if(product.length < 1){
-    //     return <div>
-    //         <h5>Hmmm... Something went wrong</h5>
-    //     </div>
-    // }
-
   return (
     <article>
       <div className='recent-drugs-section'>
@@ -47,10 +41,7 @@ const RecentDrugs = () => {
             <div key={item._id} className='drug-container'>
               <div className='image-container'>
                 <Link to={`/singledrug/${item._id}`}>
-                  <img
-                    src={`http://localhost:5000/images/${item.image}`}
-                    alt={item.name}
-                  />
+                  <img src={`${imageUrl}/${item.image}`} alt={item.name} />
                 </Link>
               </div>
               <div className='drug-content'>

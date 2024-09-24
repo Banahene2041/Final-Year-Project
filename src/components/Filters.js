@@ -12,11 +12,13 @@ const Filters = () => {
       <div className="filter">
         {
           filters.map((item,index)=> {
-            return <ul key={index}>
-              <li>
-                <Link>{item.name}</Link>
-              </li>
-            </ul>
+            return (
+              <ul key={index}>
+                <li>
+                  <Link to={`/category/${item.path}`}>{item.name}</Link>
+                </li>
+              </ul>
+            )
           })
         }
       </div>

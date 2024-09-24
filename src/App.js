@@ -27,7 +27,7 @@ const App = () => {
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/about' element={<About />} />
-        <Route path='/category' element={<Category />} />
+        <Route path='/category/:category' element={<Category />} />
         <Route path='/reset-password/:id/:token' element={<ResetPassword />} />
         <Route path='/singledrug/:id' element={<SingleDrug />} />
       </Routes>

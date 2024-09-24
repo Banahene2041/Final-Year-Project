@@ -9,7 +9,7 @@ import { assets } from "./assets/assets"
 
 const Navlinks = [
   { id: 1, icon: <HiOutlineHome />, path: "/home", name: "Home" },
-  { id: 2, icon: <BiCategoryAlt />, path: "/category", name: "Category" },
+  // { id: 2, icon: <BiCategoryAlt />, path: "/category", name: "Category" },
   { id: 3, icon: <BsInfoCircle />, path: "/about", name: "About Us" },
   { id: 4, icon: <MdLocalPhone />, path: "/contact", name: "Contact" },
   { id: 5, icon: <FaSignOutAlt />, path: "/register", name: "Sign Up" },
@@ -24,14 +24,14 @@ const slide = [
 ]
 
 const filters = [
-  {name: "Baby & Child Health",path: ""},
-  { name: "Men's Health", path: "" },
-  { name: "Women's", path: "" },
-  { name: "Cough,Cold & Flu", path: "" },
-  { name: "Vitamins & Supplements", path: "" },
-  { name: "Diet & Fitness", path: "" },
-  { name: "Pain Relief", path: "" },
-  { name: "Sexual Wellness", path: "" },
+  { name: "Baby & Child Health", path: "Babies and Children" },
+  { name: "Women's", path: "Women" },
+  { name: "Cough,Cold & Flu", path: "Cough, Cold & flu" },
+  { name: "Men's Health", path: "Men" },
+  { name: "Vitamins & Supplements", path: "Vitamins and Supplements" },
+  { name: "Diet & Fitness", path: "Diet & Fitness" },
+  { name: "Pain Relief", path: "Pain Relief" },
+  { name: "Sexual Wellness", path: "Sexual Wellness" },
 ]
 
 const news = [

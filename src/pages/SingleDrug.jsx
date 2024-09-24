@@ -4,6 +4,9 @@ import { useParams } from "react-router-dom"
 import axios from "axios"
 import LoaderOne from "../components/LoaderOne"
 import Header from "../components/Header"
+import SingleProduct from "../components/SingleProduct"
+import "../styles/SingleDrug.css"
+import RelatedDrug from "../components/RelatedDrug"
 
 const SingleDrug = () => {
   const { id } = useParams()
@@ -34,8 +37,9 @@ const SingleDrug = () => {
   return (
     <>
       <Header />
-      <section>
-        
+      <section className='single-drug-section'>
+        <SingleProduct {...drug} />
+        <RelatedDrug {...drug}/>
       </section>
     </>
   )

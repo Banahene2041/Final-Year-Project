@@ -7,22 +7,38 @@ import { FaCediSign } from "react-icons/fa6"
 import { Link } from "react-router-dom"
 
 const Search = () => {
-  const { drugUrl } = useGlobalContext()
+  const { drugUrl, imageUrl } = useGlobalContext()
   const [keyword, setKeyword] = useState("")
   const [loading, setLoading] = useState(false)
   const [product, setProduct] = useState([])
+  const [searchProduct, setSearchProduct] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("item searched")
+    if (keyword) {
+      fetchSearchedDrugs()
+    }
   }
 
-  const fetchSeachItem = async () => {
+  const fetchRecentSearches = async () => {
     setLoading(true)
     try {
-      const data = await axios(`${drugUrl}/recent-searches`)
-      setProduct(data.data.drugs)
+      const { data } = await axios(`${drugUrl}/recent-searches`)
+      setProduct(data.drugs)
+      setSearchProduct([])
+    } catch (error) {
+      console.log(error.response?.data?.message || error.message)
+    } finally {
       setLoading(false)
+    }
+  }
+
+  const fetchSearchedDrugs = async () => {
+    setLoading(true)
+    try {
+      const { data } = await axios(`${drugUrl}/search?keyword=${keyword}`)
+      setSearchProduct(data.drugs)
+      setProduct([])
     } catch (error) {
       console.log(error.response?.data?.message || error.message)
     } finally {
@@ -31,8 +47,17 @@ const Search = () => {
   }
 
   useEffect(() => {
-    fetchSeachItem()
-  }, [keyword])
+    fetchRecentSearches()
+  }, [])
+
+  const handleInputChange = (e) => {
+    const value = e.target.value
+    setKeyword(value)
+
+    if (value === "") {
+      fetchRecentSearches()
+    }
+  }
 
   return (
     <article className='search-section'>
@@ -42,7 +67,7 @@ const Search = () => {
             type='text'
             name='keyword'
             value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
+            onChange={handleInputChange}
             id='keyword'
             placeholder='Search'
           />
@@ -51,20 +76,21 @@ const Search = () => {
           </button>
         </div>
       </form>
-      <p className='search-title'>Recent Search</p>
+      <p className='search-title'>
+        {keyword ? "Your Search" : "Recent Searches"}
+      </p>
       {loading ? (
         <LoaderTwo />
       ) : (
         <div className='search-product-section'>
-          {product.map((item) => {
-            return (
+          {keyword && searchProduct.length === 0 ? (
+            <p>No items match your search input</p>
+          ) : (
+            (keyword ? searchProduct : product).map((item) => (
               <div key={item._id} className='drug-container'>
                 <div className='image-container'>
                   <Link to={`/singledrug/${item._id}`}>
-                    <img
-                      src={`http://localhost:5000/images/${item.image}`}
-                      alt={item.name}
-                    />
+                    <img src={`${imageUrl}/${item.image}`} alt={item.name} />
                   </Link>
                 </div>
                 <div className='drug-content'>
@@ -78,8 +104,8 @@ const Search = () => {
                   </p>
                 </div>
               </div>
-            )
-          })}
+            ))
+          )}
         </div>
       )}
     </article>

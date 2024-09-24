@@ -6,29 +6,28 @@ import axios from "axios"
 import { FaCediSign } from "react-icons/fa6"
 import { Link } from "react-router-dom"
 
-const TopPicksDrugs = () => {
+const RelatedDrug = ({ category }) => {
   const { drugUrl, imageUrl } = useGlobalContext()
-  const [loading, setLoading] = useState(false)
-  const [product, setProduct] = useState([])
+  const [relatedDrug, setRelatedDrug] = useState([])
 
-  const fetchRecentDrugs = async () => {
-    setLoading(true)
+  const getRelatedDrug = async () => {
     try {
-      const { data } = await axios(`${drugUrl}/popular`)
-      setProduct(data.drugs)
+      const { data } = await axios.get(
+        `${drugUrl}/filter/category?category=${category}`
+      )
+      setRelatedDrug(data.drugs)
     } catch (error) {
       console.log(error.response?.data?.message || error.message)
-    } finally {
-      setLoading(false)
     }
   }
 
   useEffect(() => {
-    fetchRecentDrugs()
+    getRelatedDrug()
   }, [])
 
   return (
-    <article>
+    <div className='realted-drug'>
+      <h2 className='title'>Related Drug</h2>
       <div className='splide-wrapper'>
         <Splide
           options={{
@@ -46,7 +45,7 @@ const TopPicksDrugs = () => {
             gap: "1rem",
           }}
         >
-          {product.map((item) => {
+          {relatedDrug.map((item) => {
             return (
               <SplideSlide key={item._id}>
                 <div className='drug-card'>
@@ -69,8 +68,8 @@ const TopPicksDrugs = () => {
           })}
         </Splide>
       </div>
-    </article>
+    </div>
   )
 }
 
-export default TopPicksDrugs
+export default RelatedDrug

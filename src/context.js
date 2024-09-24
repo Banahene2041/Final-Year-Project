@@ -16,11 +16,9 @@ const Context = ({ children }) => {
   }
 
   // url to the backend server
-  const url =
-    "https://final-year-project-defense-backend.onrender.com/api/users"
-  const drugUrl =
-    "https://final-year-project-defense-backend.onrender.com/api/drug"
-
+  const url = "http://localhost:5000/api/users"
+  const drugUrl = "http://localhost:5000/api/drug"
+  const imageUrl = "http://localhost:5000/images"
   // userData
   const [userData, setUserData] = useState(() => {
     const storedData = localStorage.getItem("userData")
@@ -39,6 +37,7 @@ const Context = ({ children }) => {
         closeProfile,
         url,
         drugUrl,
+        imageUrl,
       }}
     >
       {children}
